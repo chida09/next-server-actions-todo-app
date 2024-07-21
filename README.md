@@ -1,3 +1,15 @@
+[Next.js, Prisma, Apollo GraphQL, Nexusで作るシンプルTODOアプリ](https://zenn.dev/youichiro/articles/9e028d0a3b45e3)
+[Next.js 14でStableになったServer ActionsでCRUD操作 | アールエフェクト](https://reffect.co.jp/nextjs/next-js-server-action-14#Server_Actions-2)
+
+```bash
+// db console login
+psql -d next_graphql_simple_todo_app
+
+// データベースの内容を確認
+npx prisma studio
+```
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
