@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
 export default async function Home() {
+  // これはRSCを利用したServer Actions
   const todoList = await prisma.task.findMany();
 
   return (
