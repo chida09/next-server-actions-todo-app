@@ -1,11 +1,20 @@
 import { ApolloServer } from 'apollo-server-micro'
 import Cors from 'micro-cors'
-import { createContext } from '../../graphql/context';
-import { schema } from '@/graphql/schema';
+import { typeDefs } from '@/graphql/schema';
+import { resolvers } from '@/graphql/resolvers';
+import { PrismaClient } from '@prisma/client'
 
 const cors = Cors()
+const prisma = new PrismaClient()
 
-const apolloServer = new ApolloServer({ schema, context: createContext, })
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: () => ({
+    prisma,
+  }),
+})
+
 const startServer = apolloServer.start()
 
 export default cors(async function handler(req, res) {
