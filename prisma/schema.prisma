@@ -16,10 +16,23 @@ datasource db {
 
 model Task {
   id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(100)
+  title     String
   done      Boolean  @default(false)
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @map(name: "user_id")
 
   @@map(name: "tasks")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  tasks     Task[]
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "users")
 }

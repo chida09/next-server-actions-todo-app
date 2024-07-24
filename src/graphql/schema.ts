@@ -1,13 +1,20 @@
 import { gql } from "apollo-server-micro";
 
 export const typeDefs = gql`
-  type Task {
-    id: Int
-    title: String
-    done: Boolean
-  }
+type User {
+  id: Int!
+  name: String!
+  email: String!
+}
 
-  type Query {
-    tasks: [Task]!
-  }
+type Task {
+  id: Int!
+  title: String!
+  done: Boolean!
+  user: User!
+}
+
+type Query {
+  tasks: [Task!]!
+}
 `

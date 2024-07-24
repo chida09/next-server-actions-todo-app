@@ -1,16 +1,6 @@
-
-import { gql, useQuery } from '@apollo/client'
+import { AllTasksQuery } from '@/graphql/task.query'
+import { useQuery } from '@apollo/client'
 import { Checkbox, List, ListItem } from '@chakra-ui/react'
-
-export const AllTasksQuery = gql`
-  query {
-    tasks {
-      id
-      title
-      done
-    }
-  }
-`
 
 const TaskList = () => {
   const { data, loading, error } = useQuery(AllTasksQuery)
@@ -23,7 +13,7 @@ const TaskList = () => {
       {data.tasks.map((task: any) => (
         <ListItem key={task.id}>
           <Checkbox colorScheme='teal' isChecked={task.done}>
-            {task.title}a
+            {task.title} (Assigned to: {task.user.name})
             </Checkbox>
         </ListItem>
       ))}
