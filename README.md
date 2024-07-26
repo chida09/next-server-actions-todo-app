@@ -1,4 +1,9 @@
-[Next.js, Prisma, Apollo GraphQL, Nexusで作るシンプルTODOアプリ](https://zenn.dev/youichiro/articles/9e028d0a3b45e3)
+## 概要
+ - お試し用のTODOアプリ
+ - 技術スタック： next, prisma, apollo, graphql
+
+## 参考情報
+[Next.js, Prisma, Apollo GraphQL, Nexusで作るシンプルTODOアプリ](https://zenn.dev/youichiro/articles/9e028d0a3b45e3)  
 [Next.js 14でStableになったServer ActionsでCRUD操作 | アールエフェクト](https://reffect.co.jp/nextjs/next-js-server-action-14#Server_Actions-2)
 
 ```bash
